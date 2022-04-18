@@ -1,0 +1,151 @@
+/*     -----     Setting Colors and variables     -----     */
+:root {
+  --darkbackground: #2d3033;
+  --lightbackground: #d4dde1;
+  --brandingcolor: #335252;
+  --highlight: #aa4b41;
+}
+
+/*     -----     Standard Reset & Core Elements     -----     */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*     -----     Main Areas & Semantic Sections     -----     */
+
+button {
+  height: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--brandingcolor);
+  color: var(--lightbackground);
+  border: 0px solid var(--brandingcolor);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--highlight);
+}
+
+nav {
+  height: 100%;
+  padding: 2rem;
+  background-color: var(--darkbackground);
+  color: var(--brandingcolor);
+  grid-area: 1 / 1 / 3 / 2; /* rowstart / colstart / rowend / colend */
+}
+
+nav > * {
+  margin-bottom: 2rem;
+}
+
+nav a {
+  color: var(--lightbackground);
+}
+
+nav a:focus,
+nav a:hover {
+  color: var(--highlight);
+}
+
+#portrait {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("https://avatars.githubusercontent.com/u/80284789?v=4");
+  background-size: cover;
+  border: 0px;
+  border-radius: 100%;
+}
+
+header {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--lightbackground);
+}
+
+header > * {
+  margin: 0.5rem;
+}
+
+#searchbar {
+  flex: 1;
+  height: 2rem;
+  padding: 5px;
+  border: 1px solid var(--brandingcolor);
+  border-radius: 0.25rem;
+}
+
+section {
+}
+
+footer {
+  grid-column: 1 / 3;
+  width: 100%;
+  background-color: var(--darkbackground);
+  color: var(--lightbackground);
+  padding: 1rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+footer a {
+  color: var(--lightbackground);
+}
+
+footer a:focus,
+footer a:hover {
+  color: var(--highlight);
+}
+
+/*     -----     Content Section & Card Styling     -----     */
+
+.sidebar {
+  color: var(--highlight);
+  padding: 1.25rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.cardDeck {
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+}
+
+.card {
+  height: fit-content;
+  padding: 0.5rem;
+  border: 0px;
+  border-radius: 0.25rem;
+  background-color: var(--lightbackground);
+}
+
+.card > img {
+  width: 100%;
+}
+
+.card > p {
+  font-size: 0.75rem;
+}
